@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+*:not(ion-icon) {
+  font-family: 'Teko', sans-serif !important;
+  font-size: 20px;
+}
+
+h1 {
+  margin: 20px 20px;
+  color: #000;
+  font-size: 60px;
+}
+
+.bg {
+  --ion-background-color: linear-gradient(to bottom, #bae1ff, #99c9ee, #6aafe3);
+}
+
+.tool-bg {
+  --background: #bae1ff;
+  --color: #000;
+}
+
+// .icon {
+//   position: absolute;
+//   top: 12%;
+//   left: 7%;
+//   font-size: 30px;
+//   color: #000;
+//   margin-right: 10px;
+// }
+
+.input {
+  position: relative;
+}
+
+// .input:hover {
+//   .icon {
+//     color: #bae1ff;
+//   }
+// }
+
+.login {
+  background-color: #bae1ff;
+  width: 100%;
+  position: absolute;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+  // border-top-left-radius: 100px;
+  // border-bottom-right-radius: 100px;
+}
+
+.login [type='email'],
+.login input[type='password'] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  width: 250px;
+  background: none;
+  border: 2px solid rgb(32, 91, 218);
+  // border-radius: 15px;
+  transition: 0.5s;
+  outline-style: none;
+}
+
+// .login input[type='email']:focus,
+// .login input[type='password']:focus {
+//   border-left: 40px solid #000;
+// }
+
+// .login input:valid[type='email'],
+// .login input:valid[type='password'] {
+//   border-left: 40px solid #000 !important;
+// }
+
+// .login input:valid[type='email'] + .icon,
+// .login input:valid[type='password'] + .icon {
+//   color: #bae1ff !important;
+// }
+
+.login input[type='button'] {
+  background: none;
+  border: 2px solid rgb(32, 91, 218);
+  padding: 10px 10px;
+  width: 85%;
+  margin: 10px 10px;
+  // border-radius: 15px;
+  transition: 0.6s;
+  outline-style: none;
+  color: #000;
+}
+
+.login input[type='button']:hover {
+  background-color: rgb(32, 91, 218);
+  color: #bae1ff;
+}

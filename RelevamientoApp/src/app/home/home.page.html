@@ -1,0 +1,113 @@
+<ion-content [fullscreen]="true" class="bg">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="tool-bg">
+      <ion-title size="medium">Inicio de Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form class="form" autocomplete="off" style="position: absolute; top: 2%">
+    <div class="control" style="text-align: center">
+      <h1>Loguearse</h1>
+    </div>
+    <div class="control block-cube block-input">
+      <input
+        type="email"
+        name="usuario"
+        id="usuario"
+        required
+        [(ngModel)]="user.email"
+        placeholder="email"
+      />
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <div class="control block-cube block-input">
+      <input
+        type="password"
+        name="contrasenia"
+        id="contrasenia"
+        required
+        [(ngModel)]="user.password"
+        placeholder="contraseña"
+      />
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <button class="btn block-cube block-cube-hover" type="button">
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="text" (click)="onLogin()">Loguearse</div>
+    </button>
+  </form>
+  <ion-list
+    style="position: absolute; bottom: 4%; left: 7%; width: 100%; --ion-background-color: #baffc9"
+    (ionChange)="cambioUsuario($event)"
+  >
+    <ion-radio-group>
+      <ion-item lines="none">
+        <ion-label>Administrador</ion-label>
+        <ion-radio slot="start" value="admin"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Tester</ion-label>
+        <ion-radio color="medium" slot="start" value="tester"></ion-radio>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Usuario</ion-label>
+        <ion-radio color="danger" slot="start" value="usuario"></ion-radio>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Anonimo</ion-label>
+        <ion-radio color="warning" slot="start" value="anonimo"></ion-radio>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Invitado</ion-label>
+        <ion-radio color="tertiary" slot="start" value="invitado"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <!-- <div class="login">
+    <form action="">
+      <h1>Loguearse</h1>
+      <div class="input">
+        <input type="email" name="usuario" id="usuario" required [(ngModel)]="user.email" />
+        <ion-icon name="person-outline" class="icon"></ion-icon>
+      </div>
+      <div class="input">
+        <input
+          type="password"
+          name="contrasenia"
+          id="contrasenia"
+          required
+          [(ngModel)]="user.password"
+        />
+        <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+      </div>
+      <input type="button" value="Loguearse" (click)="onLogin($event)" />
+    </form>
+  </div> -->
+</ion-content>

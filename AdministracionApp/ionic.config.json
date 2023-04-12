@@ -1,0 +1,7 @@
+{
+  "name": "Gestión de Personal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.escaner",
+  "appName": "Crédito QR",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 6000,
+      "launchAutoHide": false
+    }
+  },
+  "cordova": {}
+}

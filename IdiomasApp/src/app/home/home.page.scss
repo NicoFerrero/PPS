@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*:not(ion-icon){
+  font-family: 'Raleway',  sans-serif !important;
+}
+
+h1 {
+  margin: 20px 20px;
+  color: #000;
+}
+
+.bg {
+  --ion-background-color: linear-gradient(to bottom, #f48d97, #f48d97, #e87882);
+}
+
+.tool-bg {
+  --background: #ffb3ba;
+  --color: #000;
+}
+
+.icon {
+  position: absolute;
+  top: 12%;
+  left: 7%;
+  font-size: 30px;
+  color: #000;
+  margin-right: 10px;
+}
+
+.input {
+  position: relative;
+}
+
+.input:hover {
+  .icon {
+    color: #ffb3ba;
+  }
+}
+
+.login {
+  background-color: #ffb3ba;
+  width: 100%;
+  position: absolute;
+  padding: 40px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.login [type='email'],
+.login input[type='password'] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  width: 250px;
+  background: none;
+  border: 2px solid #000;
+  border-radius: 15px;
+  transition: 0.5s;
+  outline-style: none;
+}
+
+.login input[type='email']:focus,
+.login input[type='password']:focus {
+  border-left: 40px solid #000;
+}
+
+.login input:valid[type='email'],
+.login input:valid[type='password'] {
+  border-left: 40px solid #000 !important;
+}
+
+.login input:valid[type='email'] + .icon,
+.login input:valid[type='password'] + .icon {
+  color: #ffb3ba !important;
+}
+
+.login input[type='button'] {
+  background: none;
+  border: 2px solid #000;
+  padding: 10px 10px;
+  width: 60%;
+  margin: 10px 10px;
+  border-radius: 15px;
+  transition: 0.6s;
+  outline-style: none;
+  color: #000;
+}
+
+.login input[type='button']:hover {
+  background-color: #000;
+  color: #ffb3ba;
+}
+
+.custom {
+  position: absolute;
+  bottom: 19%;
+  left: 10%;
+  width: 80%;
+  --background: #fff;
+}
+.custom-2 {
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  width: 80%;
+  --background: #fff;
+}
+
+img {
+  position: relative;
+  top: 0;
+  left: 30%;
+}
+
+ion-range {
+  --knob-background: #ffb3ba;
+  --bar-background-active: #ffb3ba;
+  /*--bar-background-active: #02a7de;
+  --bar-background: #02a7de;
+  --bar-height: 6px;
+  --knob-size: 18px;
+  --knob-border-radius: 50%;
+  --bar-border-radius: 20px;
+  --knob-box-shadow: 0px 0px 0px 3px #fff;*/
+}

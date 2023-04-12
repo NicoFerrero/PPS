@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img [src]="fotoUrl" style="width: 71%; position: absolute; top: 3%; left: 13%"></ion-img>
+  <ion-progress-bar color="primary" [value]="porcentaje"></ion-progress-bar>
+  <ion-fab
+    horizontal="center"
+    vertical="bottom"
+    style="position: absolute; bottom: 1%; left: 25%"
+    (click)="subir(true)"
+  >
+    <ion-fab-button color="success">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button> </ion-fab
+  ><ion-fab
+    horizontal="center"
+    vertical="bottom"
+    style="position: absolute; bottom: 1%; left: 75%"
+    (click)="subir(false)"
+  >
+    <ion-fab-button color="danger">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

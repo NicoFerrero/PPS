@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Aula de 4A</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home">Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Data to display after skeleton screen -->
+  <!-- <section class="msger" *ngIf="mensajes.length > 1"> -->
+  <section class="msger">
+    <main class="msger-chat" id="divExample">
+      <div
+        class="msg"
+        *ngFor="let mensaje of mensajes"
+        [ngClass]="{'left-msg': mensaje.usuario !== user.uid, 'right-msg':mensaje.usuario === user.uid}"
+      >
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name" *ngIf="mensaje.usuario !== user.uid">
+              {{mensaje.nombreCompleto}}
+            </div>
+            <div class="msg-info-time">{{mensaje.fecha.seconds * 1000 | date:'H:mm'}}</div>
+          </div>
+
+          <div class="msg-text">{{mensaje.mensaje}}</div>
+        </div>
+      </div>
+    </main>
+
+    <form class="msger-inputarea">
+      <input
+        type="text"
+        class="msger-input"
+        placeholder="Ingrese un mensaje"
+        name="mensaje"
+        [(ngModel)]="mensaje"
+        (change)="error($event)"
+      />
+      <button
+        type="submit"
+        class="msger-send-btn"
+        (click)="enviarMensaje($event)"
+        [ngClass]="{'error': mensaje.length > 21}"
+      >
+        Enviar
+      </button>
+    </form>
+  </section>
+</ion-content>

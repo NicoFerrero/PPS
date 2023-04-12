@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true" class="bg">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="tool-bg">
+      <ion-title size="medium">Inicio de Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="login">
+    <form action="">
+      <h1>Loguearse</h1>
+      <div class="input">
+        <input
+          type="email"
+          name="usuario"
+          id="usuario"
+          required
+          [(ngModel)]="user.email"
+          placeholder="Ingrese su email"
+        />
+        <!-- <ion-icon name="person-outline" class="icon"></ion-icon> -->
+      </div>
+      <div class="input">
+        <input
+          type="password"
+          name="contrasenia"
+          id="contrasenia"
+          placeholder="Ingrese su contraseña"
+          required
+          [(ngModel)]="user.password"
+        />
+        <!-- <ion-icon name="lock-closed-outline" class="icon"></ion-icon> -->
+      </div>
+      <!-- <input type="button" value="Loguearse" (click)="onLogin($event)" /> -->
+      <div
+        id="button"
+        style="
+          border: 1px solid black;
+          border-radius: 50%;
+          height: 60px;
+          width: 60px;
+          position: relative;
+          left: 40%;
+        "
+        (click)="onLogin($event)"
+      >
+        <ion-icon
+          name="enter-outline"
+          style="font-size: 50px; position: absolute; top: 5%; left: 0"
+        ></ion-icon>
+      </div>
+    </form>
+  </div>
+  <ion-item
+    style="position: absolute; bottom: 30%; left: 15%; width: 70%; --ion-background-color: #ffdfba"
+  >
+    <ion-label>Elija Usuario</ion-label>
+    <ion-select interface="sheet" (ionChange)="cambiarUsuario($event.target.value)">
+      <ion-select-option value="admin">Administrador</ion-select-option>
+      <ion-select-option value="tester">Tester</ion-select-option>
+      <ion-select-option value="usuario">Usuario</ion-select-option>
+      <ion-select-option value="anonimo">Anonimo</ion-select-option>
+      <ion-select-option value="invitado">Invitado</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

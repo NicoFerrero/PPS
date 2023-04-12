@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.alarma",
+  "appName": "Alarma de Seguridad",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 6000,
+      "launchAutoHide": false
+    }
+  },
+  "cordova": {}
+}

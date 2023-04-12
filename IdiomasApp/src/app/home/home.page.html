@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="bg">
+    <ion-header class="ion-no-border">
+        <ion-toolbar class="tool-bg">
+            <ion-title size="medium">Inicio de Sesión</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <div class="login">
+        <form action="">
+            <h1>Loguearse</h1>
+            <div class="input">
+                <input type="email" name="usuario" id="usuario" required [(ngModel)]="user.email" />
+                <ion-icon name="person-outline" class="icon"></ion-icon>
+            </div>
+            <div class="input">
+                <input
+                    type="password"
+                    name="contrasenia"
+                    id="contrasenia"
+                    required
+                    [(ngModel)]="user.password"
+                />
+                <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+            </div>
+            <input type="button" value="Loguearse" (click)="onLogin($event)" />
+            <input type="button" value="entrar" routerLink="/principal" />
+        </form>
+    </div>
+    <ion-item class="custom">
+        <ion-range min="0" max="100" step="20" snaps (ionChange)="cambioUsuario($event)">
+            <ion-icon name="person-remove-outline" slot="start" size="small"></ion-icon>
+            <ion-icon name="person-add-outline" slot="end"></ion-icon>
+        </ion-range>
+    </ion-item>
+    <div class="custom-2">
+        <img [src]="tipoUsuario" alt="" height="100px" width="100px" />
+    </div>
+</ion-content>

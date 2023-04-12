@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>propias</ion-title>
+    <ion-icon
+      name="power-outline"
+      slot="end"
+      size="large"
+      class="ion-margin-end"
+      (click)="cerrarSesion()"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <ion-grid size="12">
+      <ion-col size="12" *ngFor="let imagen of imagenes">
+        <ion-card style="height: 300px">
+          <img [src]="imagen.fotoUrl" alt="" height="170px" width="100%" />
+          <!-- <img [src]="imagen.fotoUrl" height="100px" width="100%" /> -->
+          <ion-card-header>
+            <ion-card-subtitle
+              >Fecha - {{imagen.fecha.seconds * 1000 | date:'dd/MM/yyyy H:mm:ss'}}
+            </ion-card-subtitle>
+            <ion-card-title>Votos - {{imagen.cantVotos}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <strong>Categoria - {{imagen.linda === true ? 'Linda' : 'Fea'}}</strong>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-grid>
+  </div>
+  <!-- <ion-tabs style="z-index: 999">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/principal']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Principal</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/lindas']">
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+        <ion-label>Lindas</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/feas']">
+        <ion-icon name="thumbs-down-outline"></ion-icon>
+        <ion-label>Feas</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/propias']">
+        <ion-icon name="man-outline"></ion-icon>
+        <ion-label>Propias</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/estadisticas']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+        <ion-label>Estadistica</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+</ion-content>

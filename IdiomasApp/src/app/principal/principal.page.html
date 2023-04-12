@@ -1,0 +1,192 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="false" style="--ion-background-color: #ffb3ba">
+  <div class="container">
+    <ion-fab horizontal="end" vertical="top" slot="fixed">
+      <ion-fab-button color="danger">
+        <ion-icon name="language-outline" *ngIf="idiomaElegido === ''"></ion-icon>
+        <img
+          src="../../assets/banderas/espana.png"
+          alt=""
+          style="width: 100%; height: 100%"
+          *ngIf="idiomaElegido === 'español'"
+        />
+        <img
+          src="../../assets/banderas/reino-unido.png"
+          alt=""
+          style="width: 100%; height: 100%"
+          *ngIf="idiomaElegido === 'ingles'"
+        />
+        <img
+          src="../../assets/banderas/portugal.png"
+          alt=""
+          style="width: 100%; height: 100%"
+          *ngIf="idiomaElegido === 'portugues'"
+        />
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button color="light" (click)="cambiarIdioma('español')">
+          <img src="../../assets/banderas/espana.png" alt="" style="width: 100%; height: 100%" />
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)="cambiarIdioma('ingles')">
+          <img
+            src="../../assets/banderas/reino-unido.png"
+            alt=""
+            style="width: 100%; height: 100%"
+          />
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)="cambiarIdioma('portugues')">
+          <img src="../../assets/banderas/portugal.png" alt="" style="width: 100%; height: 100%" />
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+    <ion-fab horizontal="start" vertical="top" slot="fixed">
+      <ion-fab-button color="warning">
+        <ion-icon name="book-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button color="tertiary" (click)="cambiarTopic('numeros')">
+          <img src="../../assets/topics/cubos.png" alt="" style="width: 80%; height: 80%" />
+        </ion-fab-button>
+        <ion-fab-button color="tertiary" (click)="cambiarTopic('animales')">
+          <img src="../../assets/topics/leon.png" alt="" style="width: 80%; height: 80%" />
+        </ion-fab-button>
+        <ion-fab-button color="tertiary" (click)="cambiarTopic('colores')">
+          <img
+            src="../../assets/topics/paleta-de-pintura.png"
+            alt=""
+            style="width: 80%; height: 80%"
+          />
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <div
+      class="height-100 width-100"
+      [ngClass]="{ 'flex-v': vertical,
+    'flex-h': !vertical }"
+      style="position: absolute; top: 28px; left: 0"
+      *ngIf="topic === 'animales'"
+    >
+      <div
+        *ngFor="let animal of animales;"
+        class="buttons center-vertical center-horizontal learn-more"
+        [ngClass]="{ 'height-15 width-90 flex-h': vertical,
+      'height-80 width-20 flex-v': !vertical }"
+        (click)="reproducirSonido(animal)"
+      >
+        <img
+          [src]="animal.imagen"
+          [ngClass]="{ 'border-img-portrait': vertical,
+        'border-img-landscape': !vertical }"
+        />
+        <!-- Audio Placeholder: {{objeto}}_{{this._lenguaje}} -->
+      </div>
+    </div>
+
+    <div
+      class="height-100 width-100"
+      [ngClass]="{ 'flex-v': vertical,
+    'flex-h': !vertical }"
+      style="position: absolute; top: 28px; left: 0"
+      *ngIf="topic === 'numeros'"
+    >
+      <div
+        *ngFor="let numero of numeros;"
+        class="buttons center-vertical center-horizontal learn-more"
+        [ngClass]="{ 'height-15 width-90 flex-h': vertical,
+      'height-80 width-20 flex-v': !vertical }"
+        (click)="reproducirSonido(numero)"
+      >
+        <img
+          [src]="numero.imagen"
+          [ngClass]="{ 'border-img-portrait': vertical,
+        'border-img-landscape': !vertical }"
+        />
+        <!-- Audio Placeholder: {{objeto}}_{{this._lenguaje}} -->
+      </div>
+    </div>
+
+    <div
+      class="height-100 width-100"
+      [ngClass]="{ 'flex-v': vertical,
+    'flex-h': !vertical }"
+      style="position: absolute; top: 28px; left: 0"
+      *ngIf="topic === 'colores'"
+    >
+      <div
+        *ngFor="let color of colores;"
+        class="buttons center-vertical center-horizontal learn-more"
+        [ngClass]="{ 'height-15 width-90 flex-h': vertical,
+      'height-80 width-20 flex-v': !vertical }"
+        (click)="reproducirSonido(color)"
+      >
+        <img
+          [src]="color.imagen"
+          [ngClass]="{ 'border-img-portrait': vertical,
+          'border-img-landscape': !vertical }"
+        />
+        <!-- Audio Placeholder: {{objeto}}_{{this._lenguaje}} -->
+      </div>
+    </div>
+
+    <!-- <ion-grid *ngIf="topic === 'animales'">
+      <ion-row size="12">
+        <ion-col
+          [size]="animal.size"
+          *ngFor="let animal of animales; let i = index"
+          style="--ion-grid-column-padding: 15px"
+        >
+          <button class="learn-more" (click)="reproducirSonido(animal)">
+            <img [src]="animal.imagen" alt="" />
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="topic === 'colores'">
+      <ion-row size="12">
+        <ion-col
+          [size]="color.size"
+          *ngFor="let color of colores; let i = index"
+          style="--ion-grid-column-padding: 15px"
+        >
+          <button
+            style="height: 100%; width: 100%"
+            (click)="reproducirSonido(color)"
+            class="learn-more"
+          >
+            <img [src]="color.imagen" alt="" />
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="topic === 'numeros'">
+      <ion-row size="12">
+        <ion-col
+          [size]="numero.size"
+          *ngFor="let numero of numeros; let i = index"
+          style="--ion-grid-column-padding: 15px"
+        >
+          <button
+            style="height: 100%; width: 100%"
+            (click)="reproducirSonido(numero)"
+            class="learn-more"
+          >
+            <img [src]="numero.imagen" alt="" />
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed" (click)="cerrarSesion()">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

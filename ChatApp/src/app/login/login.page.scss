@@ -1,0 +1,115 @@
+/*@import url('https://rsms.me/inter/inter-ui.css');
+::selection {
+  background: #caafdf;
+}
+::-webkit-selection {
+  background: #caafdf;
+}
+::-moz-selection {
+  background: #caafdf;
+}*/
+
+.buttons {
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+}
+.page {
+  background: #caafdf;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  place-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  height: 630px;
+  margin: 0 auto;
+  width: 320px;
+  flex-direction: column;
+}
+
+.left {
+  background: white;
+  height: 100%;
+  top: 20px;
+  position: relative;
+  width: calc(100% - 40px);
+  left: 20px;
+  max-height: 270px;
+}
+
+.login {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+.eula {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
+  text-align: justify;
+}
+.right {
+  background: #474a59;
+  box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+  color: #f1f1f2;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  max-height: 350px;
+}
+
+svg {
+  position: absolute;
+  width: 320px;
+}
+path {
+  fill: none;
+  stroke: url(#linearGradient);
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+.form {
+  margin: 40px;
+  position: absolute;
+}
+label {
+  color: #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+input {
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+#submit {
+  color: #707075;
+  margin-top: 40px;
+  transition: color 300ms;
+}
+#submit:focus {
+  color: #f2f2f2;
+}
+#submit:active {
+  color: #d0d0d2;
+}

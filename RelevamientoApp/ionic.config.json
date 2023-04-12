@@ -1,0 +1,7 @@
+{
+  "name": "RelevamientoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

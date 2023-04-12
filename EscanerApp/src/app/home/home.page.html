@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true" class="bg">
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="tool-bg">
+      <ion-title size="medium">Inicio de Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card style="background: white; margin-top: 50%">
+    <ion-card-content>
+      <ion-item style="--background: white">
+        <ion-label position="floating"
+          ><ion-icon color="warning" size="large" name="mail-outline"></ion-icon> Correo</ion-label
+        >
+        <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item style="position: relative" style="--background: white">
+        <ion-label position="floating"
+          ><ion-icon color="warning" size="large" name="lock-closed-outline"></ion-icon>
+          Contraseña</ion-label
+        >
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-grid>
+        <ion-row size="12">
+          <ion-col size="12"
+            ><ion-button color="warning" expand="block" (click)="onLogin($event)" #login
+              >Loguearse</ion-button
+            ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!-- <div class="login">
+    <form action="">
+      <h1>Loguearse</h1>
+      <div class="input">
+        <input type="email" name="usuario" id="usuario" required [(ngModel)]="user.email" />
+        <ion-icon name="person-outline" class="icon"></ion-icon>
+      </div>
+      <div class="input">
+        <input
+          type="password"
+          name="contrasenia"
+          id="contrasenia"
+          required
+          [(ngModel)]="user.password"
+        />
+        <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+      </div>
+      <input type="button" value="Loguearse" (click)="onLogin($event)" />
+    </form>
+  </div> -->
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="light" size="large" (click)="cambiarUsuario('admin')">
+        <img src="../../assets/administrador.png" alt="" style="width: 28px" />
+      </ion-fab-button>
+      <ion-fab-button color="light" size="large" (click)="cambiarUsuario('tester')">
+        <img src="../../assets/proteccion.png" alt="" style="width: 28px" />
+      </ion-fab-button>
+      <ion-fab-button color="light" size="large" (click)="cambiarUsuario('usuario')">
+        <img src="../../assets/programador.png" alt="" style="width: 28px" />
+      </ion-fab-button>
+      <ion-fab-button color="light" size="large" (click)="cambiarUsuario('anonimo')">
+        <img src="../../assets/hackers.png" alt="" style="width: 28px" />
+      </ion-fab-button>
+      <ion-fab-button color="light" size="large" (click)="cambiarUsuario('invitado')">
+        <img src="../../assets/guest-post.png" alt="" style="width: 28px" />
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

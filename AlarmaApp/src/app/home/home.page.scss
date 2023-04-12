@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*:not(ion-icon) {
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+h1 {
+  margin: 20px 20px;
+  color: #000;
+}
+
+.bg {
+  --ion-background-color: linear-gradient(to bottom, #ffdfba, #eec28f, #dda361);
+}
+
+.tool-bg {
+  --background: #ffdfba;
+  --color: #000;
+}
+
+// .icon {
+//   position: absolute;
+//   top: 12%;
+//   left: 7%;
+//   font-size: 30px;
+//   color: #000;
+//   margin-right: 10px;
+// }
+
+.input {
+  position: relative;
+}
+
+// .input:hover {
+//   .icon {
+//     color: #ffdfba;
+//   }
+// }
+
+.login {
+  //background-color: #ffdfba;
+  width: 100%;
+  position: absolute;
+  padding: 40px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  // border-top-left-radius: 100px;
+  // border-bottom-right-radius: 100px;
+}
+
+.login [type='email'],
+.login input[type='password'] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  width: 250px;
+  background: none;
+  //border: 2px solid #000;
+  border: none;
+  border-bottom: 2px solid #000;
+  //border-radius: 15px;
+  transition: 0.5s;
+  outline-style: none;
+}
+
+// .login input[type='email']:focus,
+// .login input[type='password']:focus {
+//   border-left: 40px solid #000;
+// }
+
+// .login input:valid[type='email'],
+// .login input:valid[type='password'] {
+//   border-left: 40px solid #000 !important;
+// }
+
+// .login input:valid[type='email'] + .icon,
+// .login input:valid[type='password'] + .icon {
+//   color: #ffdfba !important;
+// }
+
+// .login input[type='button'] {
+//   background: none;
+//   border: 2px solid #000;
+//   padding: 10px 10px;
+//   width: 60%;
+//   margin: 10px 10px;
+//   border-radius: 15px;
+//   transition: 0.6s;
+//   outline-style: none;
+//   color: #000;
+// }
+
+#button:hover {
+  background-color: #000;
+  color: #ffdfba;
+  transition: all 0.5s;
+}

@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Aulas </ion-title>
+    <ion-icon (click)="cerrarSesion()" name="power-outline" slot="end" size="large" class="ion-margin-end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-button [routerLink]="['/aula-a']"
+      ><img src="../../assets/charlar.png" alt="" height="150px" /> <span>PPS-4A</span>
+    </ion-button>
+    <ion-button [routerLink]="['/aula-b']"
+      ><img src="../../assets/hablando.png" alt="" height="150px" /><span>PPS-4B</span></ion-button
+    >
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+ion-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.bg {
+  --ion-background-color: linear-gradient(to bottom, #bae1ff, #99c9ee, #6aafe3);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+*:not(ion-icon) {
+  font-family: 'Teko', sans-serif !important;
+  font-size: 30px;
+}

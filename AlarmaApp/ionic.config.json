@@ -1,0 +1,7 @@
+{
+  "name": "Alarma de Seguridad",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

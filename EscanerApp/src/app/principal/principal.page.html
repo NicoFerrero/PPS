@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="true">
+  <div class="container">
+    <ion-chip style="position: absolute; top: 0; left: 0; margin: 5%">
+      <ion-avatar>
+        <img
+          [src]="usuario?.foto === '' ? 'https://censur.es/wp-content/uploads/2019/03/default-avatar.png' : usuario?.foto"
+        />
+      </ion-avatar>
+      <ion-label>{{usuario?.nombre}} {{usuario?.apellido}}</ion-label>
+    </ion-chip>
+
+    <ion-card style="margin-bottom: 25%; width: 80%; height: 70%">
+      <ion-card-header style="margin-top: 10%">
+        <ion-card-title style="text-align: center">Visor de Credito</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none" style="width: 90%"
+          ><ion-icon
+            slot="start"
+            name="wallet-outline"
+            style="font-size: 35px; margin-bottom: 12%"
+            id="icon"
+          ></ion-icon>
+          <ion-input
+            type="text"
+            style="border: 1px solid black; text-align: center; margin-bottom: 20px"
+            [value]="usuario?.credito | currency"
+          ></ion-input
+        ></ion-item>
+
+        <ion-button expand="block" color="warning" (click)="leerQr()">Leer QR</ion-button>
+        <ion-button expand="block" color="danger" (click)="cargar('reset')">Reset</ion-button>
+        <div
+          *ngIf="aCargado !== ''"
+          style="display: flex; flex-direction: column; align-items: center; justify-items: center"
+        >
+          <ion-text color="primary" class="ion-margin-left">
+            <h1 style="font-size: 20px">Cargó {{aCargado}} creditos con el Qr!!</h1>
+          </ion-text>
+          <img [src]="qr" alt="" height="170px" />
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" (click)="cerrarSesion()">
+    <ion-fab-button color="danger">
+      <ion-icon name="power-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-button color="medium" (click)="cargar('2786f4877b9091dcad7f35751bfcf5d5ea712b2f')"
+    >100</ion-button
+  >
+  <ion-button (click)="cargar('ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ')">50</ion-button>
+  <ion-button (click)="cargar('8c95def646b6127282ed50454b73240300dccabc')">10</ion-button>
+</ion-content>

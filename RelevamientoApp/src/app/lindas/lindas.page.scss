@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+*:not(ion-icon) {
+  font-family: 'Amatic SC', sans-serif !important;
+  font-size: 20px;
+}
+
+ion-content {
+  --ion-background-color: rgb(171, 240, 207) 0%;
+}
+
+ion-card {
+  --background: #fff;
+}

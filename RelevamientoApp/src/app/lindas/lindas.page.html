@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lindas</ion-title>
+    <ion-icon
+      name="power-outline"
+      slot="end"
+      size="large"
+      class="ion-margin-end"
+      (click)="cerrarSesion()"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <ion-grid size="12">
+      <ion-col size="12" *ngFor="let imagen of imagenes">
+        <ion-card style="height: 300px">
+          <img [src]="imagen.fotoUrl" alt="" height="170px" width="100%" />
+          <!-- <img [src]="imagen.fotoUrl" height="100px" width="100%" /> -->
+          <ion-card-header>
+            <ion-card-subtitle
+              >Fecha - {{imagen.fecha.seconds * 1000 | date:'dd/MM/yyyy H:mm:ss'}}
+            </ion-card-subtitle>
+            <ion-card-title>Votos - {{imagen.cantVotos}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <span *ngIf="imagen.votos.includes(uid)"
+              ><ion-icon name="alert-circle-outline" color="warning" size="large"></ion-icon>
+              <ion-text style="position: absolute"> Ya votado por esta foto</ion-text></span
+            >
+            <ion-icon
+              name="thumbs-up-outline"
+              *ngIf="!imagen.votos.includes(uid)"
+              (click)="votar(imagen.id)"
+              color="primary"
+              size="large"
+            ></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-grid>
+  </div>
+  <ion-fab
+    horizontal="end"
+    vertical="bottom"
+    (click)="tomarFoto()"
+    slot="fixed"
+    edge="true"
+    style="position: absolute; bottom: 1%"
+  >
+    <ion-fab-button color="danger">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- <ion-tabs style="z-index: 999">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/principal']">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Principal</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/lindas']">
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+        <ion-label>Lindas</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/feas']">
+        <ion-icon name="thumbs-down-outline"></ion-icon>
+        <ion-label>Feas</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/propias']">
+        <ion-icon name="man-outline"></ion-icon>
+        <ion-label>Propias</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button [routerLink]="['/estadisticas']">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+        <ion-label>Estadistica</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+</ion-content>

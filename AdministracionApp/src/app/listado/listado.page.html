@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen style="--ion-background-color: #bae1ff">
+  <ion-spinner name="dots" *ngIf="!users" color="tertiary"></ion-spinner>
+  <ion-list *ngIf="users">
+    <ion-list-header class="ion-padding-vertical" style="font-size: 30px">
+      Listado de usuarios</ion-list-header
+    >
+    <ion-item *ngFor="let user of users" lines="full">
+      <ion-avatar slot="start">
+        <img *ngIf="user.foto !== ''" [src]="user.foto" />
+        <img
+          *ngIf="user.foto === ''"
+          src="https://censur.es/wp-content/uploads/2019/03/default-avatar.png"
+        />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{user.nombre}} {{user.apellido}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+    [routerLink]="['/crear-usuario']"
+    *ngIf="currentUser?.tipoUsuario === 'admin' && users"
+  >
+    <ion-fab-button>
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" (click)="cerrarSesion()" *ngIf="users">
+    <ion-fab-button color="danger">
+      <ion-icon name="power-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

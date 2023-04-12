@@ -1,0 +1,7 @@
+{
+  "name": "Aprenda Idiomas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

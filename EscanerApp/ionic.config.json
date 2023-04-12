@@ -1,0 +1,7 @@
+{
+  "name": "Crédito QR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
